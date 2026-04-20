@@ -1,0 +1,118 @@
+{
+    "INFO": {
+        "PROJECT_NAME": "Chromagrams",
+        "PROJECT_FOLDER": "Chromagrams",
+        "PROJECT_DESCRIPTION": "Animation frame and motion data generation for ChromaSpace",
+        "AUTHOR": "Daniel Austin <the.potato.gnome@gmail.com>",
+        "VERSION": "0.3.0",
+        "MAIN_ENTRY_POINT": "src/Chromagrams/main.py"
+    },
+    "ROOTS": {
+        "PROJECT": "./Core/Chromagrams",
+        "WORKSPACE": "."
+    },
+    "ROOT_MODES": {
+        "ROOT_MODES: project": "Paths are relative to the project root.",
+        "ROOT_MODES: workspace": "Paths are relative to the workspace root.",
+        "CONFIG": "project",
+        "LOGS": "project",
+        "INPUTS": "project",
+        "OUTPUTS": "project",
+        "TEST_CONFIG": "project",
+        "TEST_LOGS": "workspace",
+        "TEST_INPUTS": "project",
+        "TEST_OUTPUTS": "workspace"
+    },
+    "PATHS": {
+        "CONFIG": "config/",
+        "LOGS": "logFiles/",
+        "INPUTS": "input/",
+        "OUTPUTS": "output/",
+        "TEST_CONFIG": "config/",
+        "TEST_LOGS": ".test_logs/Chromagrams/",
+        "TEST_INPUTS": "tests/test_data/",
+        "TEST_OUTPUTS": ".tests_data/Chromagrams/outputs/"
+    },
+    "SHARED_CONFIG": {
+        "ENABLED": true,
+        "PATH": "GLOBAL_SHARED.d/",
+        "FILES": {
+            "COLOURS": "COLOURS.json",
+            "BORDER_PATTERNS": "BORDER_PATTERNS.json",
+            "TESTS_OPTIONS": "TESTS_OPTIONS.json",
+            "TIME_STAMP_OPTIONS": "TIME_STAMP_OPTIONS.json"
+        }
+    },
+    "ALT_CONFIG": {
+        "ENABLED": false,
+        "PATH": "",
+        "FILES": {
+            "COLOURS": "",
+            "BORDER_PATTERNS": "",
+            "TESTS_OPTIONS": "",
+            "TIME_STAMP_OPTIONS": ""
+        }
+    },
+    "LOG_FILES": {
+        "MASTER": "Chromagrams_MASTER.log",
+        "SESSION": "Chromagrams_SESSION.log",
+        "RUNTIME": "Chromagrams_RUNTIME.log",
+        "ERROR": "Chromagrams_ERROR.log",
+        "DEBUG": "Chromagrams_DEBUG.log",
+        "WARNING": "Chromagrams_WARNING.log",
+        "INIT": "Chromagrams_INIT.log",
+        "FS": "Chromagrams_FS.log"
+    },
+    "LOG_CATEGORIES": {
+        "default": [
+            "MASTER",
+            "SESSION",
+            "RUNTIME"
+        ],
+        "error": [
+            "MASTER",
+            "SESSION",
+            "RUNTIME",
+            "ERROR"
+        ],
+        "fs": [
+            "MASTER",
+            "SESSION",
+            "RUNTIME",
+            "FS"
+        ],
+        "init": [
+            "MASTER",
+            "SESSION",
+            "RUNTIME",
+            "INIT"
+        ],
+        "debug": [
+            "MASTER",
+            "SESSION",
+            "RUNTIME",
+            "DEBUG"
+        ],
+        "warning": [
+            "MASTER",
+            "SESSION",
+            "RUNTIME",
+            "WARNING"
+        ],
+        "all": [
+            "MASTER",
+            "SESSION",
+            "RUNTIME",
+            "ERROR",
+            "FS",
+            "INIT",
+            "DEBUG",
+            "WARNING"
+        ]
+    },
+
+    "ANIMATION_DEFAULTS": {
+        "FRAME_COUNT": 8,
+        "AMPLITUDE": 0.5
+    }
+}
