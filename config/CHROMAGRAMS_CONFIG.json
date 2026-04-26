@@ -129,5 +129,19 @@
     "ANIMATION_DEFAULTS": {
         "FRAME_COUNT": 8,
         "AMPLITUDE": 0.5
+    },
+    "FIREPLACE_DEFAULTS": {
+        "DURATION": 12.0,
+        "FPS": 60.0,
+        "FLICKER_SPEED_SCALE": 0.7,
+        "FLICKER_HARMONICS": 6,
+        "FLICKER_CYCLES": 8,
+        "HUE_MIN": 0.0,
+        "HUE_MAX": 0.083,
+        "SATURATION_BASE": 0.85,
+        "SATURATION_RANGE": 0.12,
+        "BRIGHTNESS_BASE": 0.75,
+        "BRIGHTNESS_RANGE": 0.20,
+        "FLICKER_RANGE": 0.15
     }
 }
