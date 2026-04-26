@@ -163,13 +163,16 @@ def _section_fireplace() -> None:
         make = seq.generate_frames
     else:
         _log("!warn", "Dev.Chromaspace not found — exercising inline logic fallback")
-        make = lambda **kw: _make_fireplace_frames(  # noqa: E731
-            kw.get("frame_count", round(
-                CONFIG.get("FIREPLACE_DEFAULTS", {}).get("DURATION", 12.0) *
-                CONFIG.get("FIREPLACE_DEFAULTS", {}).get("FPS", 60.0)
-            )),
-            flicker_speed=kw.get("flicker_speed_scale"),
+        _fp_defaults = CONFIG.get("FIREPLACE_DEFAULTS", {})
+        _default_count = round(
+            _fp_defaults.get("DURATION", 12.0) * _fp_defaults.get("FPS", 60.0)
         )
+
+        def make(frame_count: int | None = None, flicker_speed_scale: float | None = None, **_kw) -> list[dict]:
+            return _make_fireplace_frames(
+                frame_count if frame_count is not None else _default_count,
+                flicker_speed=flicker_speed_scale,
+            )
 
     # --- Normal paths ---
     frames = make(frame_count=12)
