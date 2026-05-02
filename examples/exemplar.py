@@ -10,28 +10,41 @@ Usage
 
 from __future__ import annotations
 
+import json
 import importlib.util
 import math
+import subprocess
 import sys
 from pathlib import Path
 
-# Ensure the installed package (or editable src/) is importable when run from
-# the repository root without an explicit PYTHONPATH.
-_REPO_ROOT = Path(__file__).resolve().parents[1]
+# Bootstrap paths from TESTS_CONFIG for policy alignment.
+_HERE = Path(__file__).resolve()
+_TESTS_CONFIG = _HERE.parent / "TESTS_CONFIG.py"
+_TEST_PATHS = _HERE.parent / "test_paths.json"
+if not _TEST_PATHS.exists():
+    subprocess.run([sys.executable, str(_TESTS_CONFIG)], check=True)
+
+_PATHS = json.loads(_TEST_PATHS.read_text(encoding="utf-8"))
+_REPO_ROOT = Path(_PATHS["project_root"])
 _SRC = _REPO_ROOT / "src"
-if str(_SRC) not in sys.path:
-    sys.path.insert(0, str(_SRC))
+_TUILKIT_SRC = _REPO_ROOT.parent / "tUilKit" / "src"
+for _path in (_SRC, _TUILKIT_SRC):
+    _path_s = str(_path)
+    if _path.exists() and _path_s not in sys.path:
+        sys.path.insert(0, _path_s)
 
 # ---------------------------------------------------------------------------
 # tUilKit factory imports (verbose mode where available)
 # ---------------------------------------------------------------------------
-try:
-    from tUilKit import get_colour_manager, get_config_loader
-    _colour = get_colour_manager()
-    _config_loader = get_config_loader()
-    _HAS_TUILKIT = True
-except Exception:
-    _HAS_TUILKIT = False
+from tUilKit.utils.config import ConfigLoader
+from tUilKit.utils.output import ColourManager, Logger
+
+# Initialize ConfigLoader with explicit tUilKit config path
+_TUILKIT_CONFIG = Path(_PATHS.get("tuilkit_config_file", str(_REPO_ROOT.parent / "tUilKit" / "config" / "tUilKit_CONFIG.json")))
+_config_loader = ConfigLoader(config_path=str(_TUILKIT_CONFIG))
+_colour = ColourManager(_config_loader.load_colour_config())
+_logger = Logger(_colour)
+_HAS_TUILKIT = True
 
 # ---------------------------------------------------------------------------
 # Chromagrams config (loaded directly to avoid triggering the Dev namespace)

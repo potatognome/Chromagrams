@@ -8,8 +8,8 @@
         "MAIN_ENTRY_POINT": "src/Chromagrams/main.py"
     },
     "ROOTS": {
-        "PROJECT": "./Core/Chromagrams",
-        "WORKSPACE": "."
+        "PROJECT": "C:/Repository/Daniel/dev_local/Core/Chromagrams",
+        "WORKSPACE": "C:/Repository/Daniel/dev_local"
     },
     "ROOT_MODES": {
         "ROOT_MODES: project": "Paths are relative to the project root.",
@@ -32,7 +32,7 @@
     },
     "PATHS": {
         "CONFIG": "config/",
-        "LOGS": "logFiles/",
+        "LOGS": ".logs/Chromagrams/",
         "INPUTS": "input/",
         "OUTPUTS": "output/",
         "TEST_CONFIG": "config/",
@@ -66,6 +66,9 @@
             "TESTS_OPTIONS": "",
             "TIME_STAMP_OPTIONS": ""
         }
+    },
+    "SECONDARY": {
+        "FILE": "Chromagrams_SECONDARY.json"
     },
     "LOG_FILES": {
         "MASTER": "Chromagrams_MASTER.log",
@@ -143,8 +146,5 @@
         "BRIGHTNESS_BASE": 0.75,
         "BRIGHTNESS_RANGE": 0.2,
         "FLICKER_RANGE": 0.15
-    },
-    "SECONDARY": {
-        "FILE": "Chromagrams_SECONDARY.json"
     }
 }
