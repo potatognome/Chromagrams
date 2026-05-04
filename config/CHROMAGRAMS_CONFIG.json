@@ -5,7 +5,8 @@
         "PROJECT_DESCRIPTION": "Animation frame and motion data generation for ChromaSpace",
         "AUTHOR": "Daniel Austin <the.potato.gnome@gmail.com>",
         "VERSION": "0.3.0",
-        "MAIN_ENTRY_POINT": "src/Chromagrams/main.py"
+        "MAIN_ENTRY_POINT": "src/Chromagrams/main.py",
+        "COLOUR_FSTR": "!project"
     },
     "ROOTS": {
         "PROJECT": "C:/Repository/Daniel/dev_local/Core/Chromagrams",
