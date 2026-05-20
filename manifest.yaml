@@ -1,0 +1,14 @@
+name: ChromaEmitters
+layer: colour
+description: Registry and controller for LED emitters and lighting hardware.
+capabilities:
+  - register_emitters
+  - control_emitters
+depends_on:
+  - Chromagrams
+provides:
+  - EmitterSpec
+protocols:
+  - emitter.schema
+working_hours: "24/7"
+schema_version: "1.0"

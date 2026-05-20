@@ -12,7 +12,8 @@
     },
     "ROOTS": {
         "PROJECT": "C:/Repository/Daniel/dev_local/Core/Chromagrams",
-        "WORKSPACE": "C:/Repository/Daniel/dev_local"
+        "WORKSPACE": "C:/Repository/Daniel/dev_local",
+        "TUILKit": "C:/Repository/Daniel/dev_local/Core/tUilKit"
     },
     "ROOT_MODES": {
         "ROOT_MODES: project": "Paths are relative to the project root.",
@@ -40,28 +41,9 @@
         "TESTS_INPUTS": "tests/.inputData/",
         "TESTS_OUTPUTS": "tests/.outputData/"
     },
-    "SHARED_CONFIG": {
-        "ENABLED": true,
-        "PATH": "GLOBAL_SHARED.d/",
-        "FILES": {
-            "COLOURS": "COLOURS.json",
-            "BORDER_PATTERNS": "BORDER_PATTERNS.json",
-            "TESTS_OPTIONS": "TESTS_OPTIONS.json",
-            "TIME_STAMP_OPTIONS": "TIME_STAMP_OPTIONS.json"
-        }
-    },
     "ALT_CONFIG": {
         "ENABLED": false,
-        "PATH": "",
-        "FILES": {
-            "COLOURS": "",
-            "BORDER_PATTERNS": "",
-            "TESTS_OPTIONS": "",
-            "TIME_STAMP_OPTIONS": ""
-        }
-    },
-    "SECONDARY": {
-        "FILE": "Chromagrams_SECONDARY.json"
+        "FILE_PATHS": []
     },
     "LOG_FILES": {
         "DEBUG": "Chromagrams_DEBUG.log",
@@ -74,6 +56,9 @@
         "FS": "Chromagrams_FS.log",
         "CONFIG_READ": "Chromagrams_CONFIG_READ.log",
         "ERROR": "Chromagrams_ERROR.log"
+    },
+    "SECONDARY": {
+        "FILE": "Chromagrams_SECONDARY.json"
     },
     "LOG_CATEGORIES": {
         "debug": [
@@ -132,6 +117,16 @@
             "CONFIG_READ",
             "ERROR"
         ]
+    },
+    "SHARED_CONFIG": {
+        "ENABLED": true,
+        "PATH": "GLOBAL_SHARED.d/",
+        "FILES": {
+            "COLOURS": "COLOURS.json",
+            "BORDER_PATTERNS": "BORDER_PATTERNS.json",
+            "TESTS_OPTIONS": "TESTS_OPTIONS.json",
+            "TIME_STAMP_OPTIONS": "TIME_STAMP_OPTIONS.json"
+        }
     },
     "ANIMATION_DEFAULTS": {
         "FRAME_COUNT": 8,
